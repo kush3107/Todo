@@ -10,10 +10,10 @@ import java.sql.*;
 public class todo extends JFrame implements ActionListener {
     int check;
     private JPanel panel1 = new JPanel(new CardLayout());
-    public JPanel success;
-    public JPanel main;
-    TextField title = new TextField();
-    TextField content = new TextField();
+    public JPanel success = new JPanel();
+    public JPanel main = new JPanel();
+    JTextField title = new JTextField(10);
+    JTextField content = new JTextField(20);
     JButton create = new JButton("Create");
 
     public todo() {
@@ -69,8 +69,13 @@ public class todo extends JFrame implements ActionListener {
 
     public void setMainScreen() {
 
+        JLabel l = new JLabel("Title: ");
+        JLabel m = new JLabel("Content: ");
+        main.add(l);
         main.add(title);
+        main.add(m);
         main.add(content);
+        main.add(create);
         title.addActionListener(this);
         content.addActionListener(this);
         create.addActionListener(this);
